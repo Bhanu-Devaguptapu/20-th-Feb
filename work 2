@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int n, num, highest = -999999, second_highest = -999999;
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+    int count = 1;
+    while(count <= n) {
+        printf("Enter number %d: ", count);
+        scanf("%d", &num);
+        if(num > highest) {
+            second_highest = highest;
+            highest = num;
+        } else if(num > second_highest && num != highest) {
+            second_highest = num;
+        }
+        count++;
+    }
+    printf("The second highest number is %d\n", second_highest);
+    return 0;
+}
